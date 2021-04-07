@@ -31,7 +31,7 @@ public class DataBaseOfBooks {
 }
 
 class Action {
-    private ArrayList<Book> bookList = new ArrayList<>();
+    private final ArrayList<Book> bookList = new ArrayList<>();
     void addBook(Book book) {
         bookList.add(book);
     }
@@ -39,7 +39,7 @@ class Action {
     public ArrayList<Book> getBookListByAuthor(String Auth) {
         ArrayList<Book> sortlist = new ArrayList<>();
         for (Book elem : bookList) {
-            if (elem.getAuthor() == Auth) {
+            if (elem.getAuthor().equals(Auth)) {
                 sortlist.add(elem);
             }
         }
@@ -48,7 +48,7 @@ class Action {
     public ArrayList<Book> getBookListByPublisher(String Publish) {
         ArrayList<Book> sortlist = new ArrayList<>();
         for (Book elem : bookList) {
-            if (elem.getPublisher() == Publish) {
+            if (elem.getPublisher().equals(Publish)) {
                 sortlist.add(elem);
             }
         }
@@ -69,13 +69,13 @@ class Book {
     private static int counter = 0;
     private final int id = counter ++;
 
-    private String name;
+    private final String name;
     private String author;
     private String publisher;
     private int year;
-    private int quantity_pages;
-    private double price;
-    private String book_binding;
+    private final int quantity_pages;
+    private final double price;
+    private final String book_binding;
 
     public Book(String name, String author, String publisher, int year, int quantity_pages, double price, String book_binding) {
         this.name = name;

@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AirportTest {
-    private static List<Plane> planes = Arrays.asList(
+    private static final List<Plane> planes = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
             new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
@@ -33,14 +33,14 @@ public class AirportTest {
             new experimentalPlane("Ryan X-13 Vertijet", 560, 307, 500, ExperimentalTypes.VTOL, ClassificationLevel.TOP_SECRET)
     );
 
-    private static PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
+    private static final PassengerPlane planeWithMaxPassengerCapacity = new PassengerPlane("Boeing-747", 980, 16100, 70500, 242);
 
     @Test
     public void testGetTransportMilitaryPlanes() {
         Airport airport = new Airport(planes);
         List<MilitaryPlane> transportMilitaryPlanes = airport.getTransportMilitaryPlanes();
         for (MilitaryPlane militaryPlane : transportMilitaryPlanes) {
-           Assert.assertTrue(militaryPlane.getType() == MilitaryType.TRANSPORT);
+            Assert.assertSame(militaryPlane.getType(), MilitaryType.TRANSPORT);
         }
     }
 
@@ -48,7 +48,7 @@ public class AirportTest {
     public void testGetPassengerPlaneWithMaxCapacity() {
         Airport airport = new Airport(planes);
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
-        Assert.assertTrue(expectedPlaneWithMaxPassengersCapacity.equals(planeWithMaxPassengerCapacity));
+        Assert.assertEquals(expectedPlaneWithMaxPassengersCapacity, planeWithMaxPassengerCapacity);
     }
 
     @Test
@@ -68,7 +68,7 @@ public class AirportTest {
         Airport airport = new Airport(planes);
         List<MilitaryPlane> bomberMilitaryPlanes = airport.getBomberMilitaryPlanes();
         for (MilitaryPlane militaryPlane : bomberMilitaryPlanes) {
-            Assert.assertTrue(militaryPlane.getType() == MilitaryType.BOMBER);
+            Assert.assertSame(militaryPlane.getType(), MilitaryType.BOMBER);
         }
     }
 
@@ -77,7 +77,7 @@ public class AirportTest {
         Airport airport = new Airport(planes);
         List<experimentalPlane> experimentalPlanes = airport.getExperimentalPlanes();
         for(experimentalPlane experimentalPlane : experimentalPlanes){
-            Assert.assertTrue(experimentalPlane.getClassificationLevel() == ClassificationLevel.UNCLASSIFIED);
+            Assert.assertSame(experimentalPlane.getClassificationLevel(), ClassificationLevel.UNCLASSIFIED);
         }
     }
 }
