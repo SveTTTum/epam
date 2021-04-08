@@ -19,6 +19,6 @@ public class PassengerPlane extends Plane{
     public String toString() {
         return super.toString().replace("}",
                 ", passengersCapacity=" + passengersCapacity +
-                '}');
+                        '}');
     }
 }

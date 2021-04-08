@@ -39,4 +39,5 @@ public class Runner {
 
         System.out.println("Plane with max passenger capacity: " + passengerAirport.getPassengerPlaneWithMaxPassengersCapacity());
     }
+
 }

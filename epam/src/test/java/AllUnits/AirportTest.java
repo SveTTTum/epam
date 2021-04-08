@@ -59,7 +59,7 @@ public class AirportTest {
         for (int i = 0; i < planesSortedByMaxLoadCapacity.size() - 1; i++) {
             Plane currentPlane = planesSortedByMaxLoadCapacity.get(i);
             Plane nextPlane = planesSortedByMaxLoadCapacity.get(i + 1);
-            Assert.assertTrue(currentPlane.getMinLoadCapacity() > nextPlane.getMinLoadCapacity());
+            Assert.assertFalse(currentPlane.getMinLoadCapacity() > nextPlane.getMinLoadCapacity());
         }
     }
 
@@ -77,7 +77,7 @@ public class AirportTest {
         Airport airport = new Airport(planes);
         List<experimentalPlane> experimentalPlanes = airport.getExperimentalPlanes();
         for(experimentalPlane experimentalPlane : experimentalPlanes){
-            Assert.assertSame(experimentalPlane.getClassificationLevel(), ClassificationLevel.UNCLASSIFIED);
+            Assert.assertNotSame(experimentalPlane.getClassificationLevel(), ClassificationLevel.UNCLASSIFIED);
         }
     }
 }
