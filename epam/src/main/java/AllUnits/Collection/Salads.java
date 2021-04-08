@@ -1,4 +1,5 @@
 package AllUnits.Collection;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -8,6 +9,7 @@ public class Salads {
     public Salads(Map<Vegetables, Double> salad) {
         this.salad = salad;
     }
+
     public Salads() {
         salad = new EnumMap<Vegetables, Double>(Vegetables.class);
 
@@ -21,27 +23,28 @@ public class Salads {
         this.salad = salad;
     }
 
-    public void addVegetable (Vegetables vegetable, double weight) {
-        if(salad.containsKey(vegetable)) {
+    public void addVegetable(Vegetables vegetable, double weight) {
+        if (salad.containsKey(vegetable)) {
             weight += salad.get(vegetable) + weight;
         }
         salad.put(vegetable, weight);
     }
 
     public double sumOfCaloriesSalad() {
-        double sumCalories  = 0;
-        for (Vegetables vegetable: salad.keySet()) {
-            sumCalories  += vegetable.getCalories()*salad.get(vegetable)/100;
+        double sumCalories = 0;
+        for (Vegetables vegetable : salad.keySet()) {
+            sumCalories += vegetable.getCalories() * salad.get(vegetable) / 100;
         }
         return sumCalories;
     }
 
     public Set<Vegetables> saladСomposition() {
-        for (Vegetables vegetable: salad.keySet()) {
+        for (Vegetables vegetable : salad.keySet()) {
             return salad.keySet();
         }
         return null;
     }
+
     public List<Vegetables> sortByFats() {
         return salad.keySet()
                 .stream()

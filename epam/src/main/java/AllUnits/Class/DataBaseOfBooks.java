@@ -1,15 +1,16 @@
 package AllUnits.Class;
+
 import java.util.ArrayList;
 
 public class DataBaseOfBooks {
     public static void main(String[] args) {
         Action ruslit = new Action();
-        ruslit.addBook(new Book("Каштанка", "Чехов", "БелДрук", 1997, 44, 25.60,"Твердый"));
-        ruslit.addBook(new Book("Крыжовник", "Чехов", "РоссДрук", 1954, 22, 15.20,"Мягкий"));
-        ruslit.addBook(new Book("Муму", "Тургенев", "БелДрук", 1990, 80, 13.90,"Твердый"));
-        ruslit.addBook(new Book("Вишневый сад", "Чехов", "БелДрук", 1982, 97, 7.80,"Мягкий"));
-        ruslit.addBook(new Book("Война и мир", "Толстой", "РоссДрук", 1974, 1225, 44.00,"Мягкий"));
-        ruslit.addBook(new Book("Лолита", "Набоков", "Олимпия Пресс", 1955, 448, 28.30,"Твердый"));
+        ruslit.addBook(new Book("Каштанка", "Чехов", "БелДрук", 1997, 44, 25.60, "Твердый"));
+        ruslit.addBook(new Book("Крыжовник", "Чехов", "РоссДрук", 1954, 22, 15.20, "Мягкий"));
+        ruslit.addBook(new Book("Муму", "Тургенев", "БелДрук", 1990, 80, 13.90, "Твердый"));
+        ruslit.addBook(new Book("Вишневый сад", "Чехов", "БелДрук", 1982, 97, 7.80, "Мягкий"));
+        ruslit.addBook(new Book("Война и мир", "Толстой", "РоссДрук", 1974, 1225, 44.00, "Мягкий"));
+        ruslit.addBook(new Book("Лолита", "Набоков", "Олимпия Пресс", 1955, 448, 28.30, "Твердый"));
 
         System.out.println("Все книги Чехова: ");
         ArrayList<Book> listAuthor = ruslit.getBookListByAuthor("Чехов");
@@ -32,6 +33,7 @@ public class DataBaseOfBooks {
 
 class Action {
     private final ArrayList<Book> bookList = new ArrayList<>();
+
     void addBook(Book book) {
         bookList.add(book);
     }
@@ -45,6 +47,7 @@ class Action {
         }
         return sortlist;
     }
+
     public ArrayList<Book> getBookListByPublisher(String Publish) {
         ArrayList<Book> sortlist = new ArrayList<>();
         for (Book elem : bookList) {
@@ -54,6 +57,7 @@ class Action {
         }
         return sortlist;
     }
+
     public ArrayList<Book> getBookListByYear(int y) {
         ArrayList<Book> sortlist = new ArrayList<>();
         for (Book elem : bookList) {
@@ -67,7 +71,7 @@ class Action {
 
 class Book {
     private static int counter = 0;
-    private final int id = counter ++;
+    private final int id = counter++;
 
     private final String name;
     private String author;
@@ -94,6 +98,7 @@ class Book {
     public int getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }

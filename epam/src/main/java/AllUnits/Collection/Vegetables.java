@@ -8,11 +8,11 @@ public enum Vegetables {
     TOMATO(0.6, 0.0, 2.9, 23),
     CUCUMBER(0.7, 0.1, 1.8, 10),
     PEPPER(1.3, 0.1, 5.7, 27),
-    POTATO(2, 0.4, 19.7 , 83);
+    POTATO(2, 0.4, 19.7, 83);
 
     private double proteins;
-    private double  fats;
-    private double  carbohydrates;
+    private double fats;
+    private double carbohydrates;
     private double calories;
 
     Vegetables(double proteins, double fats, double carbohydrates, double calories) {
