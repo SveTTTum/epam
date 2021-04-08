@@ -3,7 +3,7 @@ package AllUnits.CleanCode.Planes;
 import AllUnits.CleanCode.models.ClassificationLevel;
 import AllUnits.CleanCode.models.ExperimentalTypes;
 
-public class experimentalPlane extends Plane{
+public class experimentalPlane extends Plane {
 
     private final ClassificationLevel classificationLevel;
 
@@ -12,7 +12,7 @@ public class experimentalPlane extends Plane{
         this.classificationLevel = classificationLevel;
     }
 
-    public ClassificationLevel getClassificationLevel(){
+    public ClassificationLevel getClassificationLevel() {
         return classificationLevel;
     }
 

@@ -2,9 +2,7 @@ package AllUnits.CleanCode.Planes;
 
 import AllUnits.CleanCode.models.MilitaryType;
 
-import java.util.Objects;
-
-public class MilitaryPlane extends Plane{
+public class MilitaryPlane extends Plane {
 
     private final MilitaryType type;
 

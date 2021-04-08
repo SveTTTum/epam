@@ -1,12 +1,13 @@
 package AllUnits;
+
 import java.util.Random;
 
 public class RandomNumbers {
     public static void main(String[] args) {
         Random rand = new Random();
 
-        System.out.print(rand.nextInt(10)+" ");
-        System.out.print(rand.nextInt(10)+" ");
+        System.out.print(rand.nextInt(10) + " ");
+        System.out.print(rand.nextInt(10) + " ");
         System.out.println(rand.nextInt(10));
 
         System.out.println(rand.nextInt(20));

@@ -15,7 +15,7 @@ public class AdditionalUnits {
         }
     };
 
-    public static void sortPoemHeightLineLengths () {
+    public static void sortPoemHeightLineLengths() {
         List<String> list = new ArrayList();
         list.add("Я к вам пишу — чего же боле?\n");
         list.add("Что я могу ещё сказать?\n");

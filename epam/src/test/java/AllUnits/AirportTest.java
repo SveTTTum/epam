@@ -10,6 +10,7 @@ import AllUnits.CleanCode.models.ExperimentalTypes;
 import AllUnits.CleanCode.models.MilitaryType;
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -73,10 +74,10 @@ public class AirportTest {
     }
 
     @Test
-    public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified(){
+    public void testExperimentalPlanesHasClassificationLevelHigherThanUnclassified() {
         Airport airport = new Airport(planes);
         List<experimentalPlane> experimentalPlanes = airport.getExperimentalPlanes();
-        for(experimentalPlane experimentalPlane : experimentalPlanes){
+        for (experimentalPlane experimentalPlane : experimentalPlanes) {
             Assert.assertNotSame(experimentalPlane.getClassificationLevel(), ClassificationLevel.UNCLASSIFIED);
         }
     }

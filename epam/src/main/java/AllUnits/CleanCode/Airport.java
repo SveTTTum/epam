@@ -6,7 +6,9 @@ import AllUnits.CleanCode.Planes.Plane;
 import AllUnits.CleanCode.Planes.experimentalPlane;
 import AllUnits.CleanCode.models.MilitaryType;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 // version: 1.1
 // made by Vitali Shulha
@@ -14,7 +16,7 @@ import java.util.*;
 
 public class Airport {
 
-private final List<? extends Plane> planes;
+    private final List<? extends Plane> planes;
 
     public Airport(List<? extends Plane> planes) {
         this.planes = planes;

@@ -1,4 +1,5 @@
 package AllUnits;
+
 import java.util.Scanner;
 
 public class MonthAndNumber {
@@ -15,6 +16,7 @@ public class MonthAndNumber {
             System.out.println("Такого месяца не существует");
         }
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите номер месяца: ");
